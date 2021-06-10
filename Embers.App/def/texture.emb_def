@@ -1,0 +1,6 @@
+tex_def_sprite sprites/default.png
+tex_ship_1 sprites/ship_1.png
+tex_person sprites/person.png
+tex_text sprites/font.png
+tex_blur sprites/blur.png
+tex_tileset sprites/tileset.png

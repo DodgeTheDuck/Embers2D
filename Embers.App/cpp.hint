@@ -1,0 +1,4 @@
+// Hint files help the Visual Studio IDE interpret Visual C++ identifiers
+// such as names of functions and macros.
+// For more information see https://go.microsoft.com/fwlink/?linkid=865984
+#define EMB_INIT(state) int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR cmd, _In_ int cmdShow) { WINDOW_MANAGER->SetApplicationHandle(hInstance); CORE::Engine* eng = new CORE::Engine(); eng->Init(); state->Init(); STATE_MANAGER->Push(state); eng->Run(); return 0; }

@@ -1,0 +1,3 @@
+mat_ship sha_sprite tex_ship_1
+mat_person sha_sprite tex_person
+mat_blur sha_blur tex_blur

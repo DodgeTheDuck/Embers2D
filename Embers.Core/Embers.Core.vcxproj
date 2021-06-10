@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <ProjectGuid>{1475D9E8-5817-421A-856A-7286EA0AFC4E}</ProjectGuid>
+    <RootNamespace>Embers2D</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Embers.Core</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(SolutionDir);$(SolutionDir)\3rdParty;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\dunca\source\repos\Embers2D\3rdParty\box2d\lib\Debug;$(SolutionDir)$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PreprocessorDefinitions>APP_EXP;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>Embers.System.lib;Embers.Graphics.lib;Embers.Def.lib;box2d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="asset.cpp" />
+    <ClCompile Include="asset_bank.cpp" />
+    <ClCompile Include="component.cpp" />
+    <ClCompile Include="conductor.cpp" />
+    <ClCompile Include="console.cpp" />
+    <ClCompile Include="constraint.cpp" />
+    <ClCompile Include="debug.cpp" />
+    <ClCompile Include="effector.cpp" />
+    <ClCompile Include="ef_impulse.cpp" />
+    <ClCompile Include="entity.cpp" />
+    <ClCompile Include="engine.cpp" />
+    <ClCompile Include="gui_border.cpp" />
+    <ClCompile Include="gui_component.cpp" />
+    <ClCompile Include="gui_panel.cpp" />
+    <ClCompile Include="gui_panel.h" />
+    <ClCompile Include="gui_text_block.cpp" />
+    <ClCompile Include="input.cpp" />
+    <ClCompile Include="material.cpp" />
+    <ClCompile Include="material_color_property.cpp" />
+    <ClCompile Include="metrics.cpp" />
+    <ClCompile Include="physics_world.cpp" />
+    <ClCompile Include="rigid_body.cpp" />
+    <ClCompile Include="scene.cpp" />
+    <ClCompile Include="scene_graph.cpp" />
+    <ClCompile Include="scene_object.cpp" />
+    <ClCompile Include="shader.cpp" />
+    <ClCompile Include="sprite.cpp" />
+    <ClCompile Include="state.cpp" />
+    <ClCompile Include="state_manager.cpp" />
+    <ClCompile Include="stb_image.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="ef_gravity.cpp" />
+    <ClCompile Include="text.cpp" />
+    <ClCompile Include="texture.cpp" />
+    <ClCompile Include="transform.cpp" />
+    <ClCompile Include="window.cpp" />
+    <ClCompile Include="window_manager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="asset.h" />
+    <ClInclude Include="asset_bank.h" />
+    <ClInclude Include="color.h" />
+    <ClInclude Include="component.h" />
+    <ClInclude Include="conductor.h" />
+    <ClInclude Include="console.h" />
+    <ClInclude Include="constraint.h" />
+    <ClInclude Include="debug.h" />
+    <ClInclude Include="effector.h" />
+    <ClInclude Include="ef_impulse.h" />
+    <ClInclude Include="entity.h" />
+    <ClInclude Include="engine.h" />
+    <ClInclude Include="gui_component.h" />
+    <ClInclude Include="gui_text_block.h" />
+    <ClInclude Include="gui_border.h" />
+    <ClInclude Include="input.h" />
+    <ClInclude Include="material.h" />
+    <ClInclude Include="material_color_property.h" />
+    <ClInclude Include="metrics.h" />
+    <ClInclude Include="physics_world.h" />
+    <ClInclude Include="rigid_body.h" />
+    <ClInclude Include="scene.h" />
+    <ClInclude Include="scene_graph.h" />
+    <ClInclude Include="scene_object.h" />
+    <ClInclude Include="shader.h" />
+    <ClInclude Include="sprite.h" />
+    <ClInclude Include="state.h" />
+    <ClInclude Include="state_manager.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="ef_gravity.h" />
+    <ClInclude Include="text.h" />
+    <ClInclude Include="texture.h" />
+    <ClInclude Include="transform.h" />
+    <ClInclude Include="window.h" />
+    <ClInclude Include="window_manager.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
