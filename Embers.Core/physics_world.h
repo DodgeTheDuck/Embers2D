@@ -12,6 +12,7 @@ namespace CORE {
 		PhysicsWorld(void);
 		void Init(void);
 
+		b2Body * CreateBody(b2BodyDef * bodyDef);
 		void Tick(void);
 		void PostTick(void);
 		void Draw(void);

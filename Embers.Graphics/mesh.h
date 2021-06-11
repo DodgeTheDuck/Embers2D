@@ -11,6 +11,8 @@ namespace GFX {
 	public:
 
 		static Mesh Rect(float left, float top, float width, float height, EDrawStyle style, glm::vec4 color = { 1.0, 1.0, 1.0, 1.0 });
+		static Mesh Polygon(std::vector<glm::vec2> points, EDrawStyle style, glm::vec4 color = { 1.0, 1.0, 1.0, 1.0 });
+
 		std::vector<Vertex> Vertices(void);
 		std::vector<uint32_t> Indices(void);
 		void SetTexCoords(uint32_t index, glm::vec2 coords);

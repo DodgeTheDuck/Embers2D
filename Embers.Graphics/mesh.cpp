@@ -56,6 +56,34 @@ namespace GFX {
 		return mesh;
 	}
 
+	Mesh Mesh::Polygon(std::vector<glm::vec2> points, EDrawStyle style, glm::vec4 color) {
+
+		Mesh mesh;
+
+		//mesh._style = style;
+		mesh._style = EDrawStyle::LINES; // TODO: filled polys
+
+		for (int i = 0; i < points.size(); i++) {
+			glm::vec2 p = points[i];
+
+			mesh._verts.push_back(Vertex({
+					p.x, p.y, 0
+				}, color, {
+					0, 0 // TODO: UV Coords for polys?
+				}));
+
+			if (i > 0) {				
+				mesh._indices.push_back(i-1);
+				mesh._indices.push_back(i);
+			}
+		}
+
+		mesh._indices.push_back(points.size() - 1);
+		mesh._indices.push_back(0);
+
+		return mesh;
+	}
+
 	std::vector<Vertex> Mesh::Vertices(void) {
 		return _verts;
 	}

@@ -30,7 +30,7 @@ Player::Player(World* world) {
 
 	_body = AddComponent<CORE::CRigidBody>();
 
-	_body->AddEffector(new CORE::EFGravity(glm::vec3(0.0f, 1.0f, 0.0f), 0.2f));
+	//_body->AddEffector(new CORE::EFGravity(glm::vec3(0.0f, 1.0f, 0.0f), 0.2f));
 
 	AddComponent<CORE::CSprite>()
 		->SetMaterial(EMB_ASSET_BANK->GetAsset<CORE::Material>("mat_person"))
@@ -83,55 +83,55 @@ void Player::Tick(void) {
 
 void Player::PostTick(void) {
 
-	CORE::CTransform* t = GetComponent<CORE::CTransform>();
+	//CORE::CTransform* t = GetComponent<CORE::CTransform>();
 
-	int bodyLeft = floor(t->Position.x) - 20;
-	int bodyRight = floor(t->Position.x) + 20;
+	//int bodyLeft = floor(t->Position.x) - 20;
+	//int bodyRight = floor(t->Position.x) + 20;
 
-	int bodyBottom = floor(t->Position.y + 28);
-
-
-	int feetY = floor(t->Position.y + 48);
-	int feetLeft = t->Position.x - 20;
-	int feetRight = t->Position.x + 20;	
-
-	Tile& tileFeet = _world->TileAt(feetLeft, feetY);
-
-	if (tileFeet.Id > 0) {
-		t->Position.y -= feetY % World::TILE_SIZE;		
-		_grounded = true;
-	}
-	else {
-		_grounded = false;
-	}
-
-	Tile& tileBodyLeft = _world->TileAt(bodyLeft, bodyBottom);
-
-	if (tileBodyLeft.Id > 0) {
-
-		if (_world->TileAt(bodyLeft, bodyBottom - World::TILE_SIZE).Id == ETileType::AIR && _grounded) {
-			t->Position.y -= World::TILE_SIZE;
-		}
-		else {
-			t->Position.x += bodyLeft % 8;
-		}
-
-	}
-
-	Tile& tileBodyRight = _world->TileAt(bodyRight, bodyBottom);
-
-	if (tileBodyRight.Id > 0) {
-		
-
-		if (_world->TileAt(bodyRight, bodyBottom - World::TILE_SIZE).Id == ETileType::AIR && _grounded) {
-			t->Position.y -= World::TILE_SIZE;
-		}
-		else {
-			t->Position.x -= bodyRight % 8;
-		}
+	//int bodyBottom = floor(t->Position.y + 28);
 
 
-	}
+	//int feetY = floor(t->Position.y + 48);
+	//int feetLeft = t->Position.x - 20;
+	//int feetRight = t->Position.x + 20;	
+
+	//Tile& tileFeet = _world->TileAt(feetLeft, feetY);
+
+	//if (tileFeet.Id > 0) {
+	//	t->Position.y -= feetY % World::TILE_SIZE;		
+	//	_grounded = true;
+	//}
+	//else {
+	//	_grounded = false;
+	//}
+
+	//Tile& tileBodyLeft = _world->TileAt(bodyLeft, bodyBottom);
+
+	//if (tileBodyLeft.Id > 0) {
+
+	//	if (_world->TileAt(bodyLeft, bodyBottom - World::TILE_SIZE).Id == ETileType::AIR && _grounded) {
+	//		t->Position.y -= World::TILE_SIZE;
+	//	}
+	//	else {
+	//		t->Position.x += bodyLeft % 8;
+	//	}
+
+	//}
+
+	//Tile& tileBodyRight = _world->TileAt(bodyRight, bodyBottom);
+
+	//if (tileBodyRight.Id > 0) {
+	//	
+
+	//	if (_world->TileAt(bodyRight, bodyBottom - World::TILE_SIZE).Id == ETileType::AIR && _grounded) {
+	//		t->Position.y -= World::TILE_SIZE;
+	//	}
+	//	else {
+	//		t->Position.x -= bodyRight % 8;
+	//	}
+
+
+	//}
 
 }
 

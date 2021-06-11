@@ -1,4 +1,5 @@
 sha_sprite shaders/sprite.frag shaders/sprite.vert
+sha_poly shaders/poly.frag shaders/poly.vert
 sha_blur shaders/blur.frag shaders/blur.vert
 sha_gui shaders/gui.frag shaders/gui.vert
 sha_text shaders/text.frag shaders/text.vert

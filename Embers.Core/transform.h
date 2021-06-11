@@ -22,12 +22,13 @@ namespace CORE {
 		virtual void PostDraw(void);
 		virtual void DrawPass(GFX::ERenderPass pass);
 
-		glm::vec3 Position;
+		glm::vec3	Position;
+		float		Angle;
+
 
 	private:
 		
 		glm::vec3 _scale;
-		float    _angle;
 
 	};
 

@@ -19,72 +19,102 @@
     <Filter Include="Header Files\def">
       <UniqueIdentifier>{816c2528-e6a3-4d49-8d0d-f4cd3e95ad70}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\physics_test">
+      <UniqueIdentifier>{6c8bbe69-7cde-47b8-8f5c-3824f03c3a98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\game_test">
+      <UniqueIdentifier>{216c6d07-763d-41d7-acab-baf9f909768f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\physics_test">
+      <UniqueIdentifier>{6246a49f-1856-44a1-9b44-3478b345244e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\game_test">
+      <UniqueIdentifier>{2ba83d87-be45-400c-b426-a623935925b4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="game_state.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="player.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="physics_test_state.cpp">
+      <Filter>Source Files\physics_test</Filter>
     </ClCompile>
     <ClCompile Include="blur.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="projectile.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="world.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="world_chunk.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="tile.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="world_generator.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\game_test</Filter>
     </ClCompile>
     <ClCompile Include="camera.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\game_test</Filter>
+    </ClCompile>
+    <ClCompile Include="game_state.cpp">
+      <Filter>Source Files\game_test</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>Source Files\game_test</Filter>
+    </ClCompile>
+    <ClCompile Include="projectile.cpp">
+      <Filter>Source Files\game_test</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files\game_test</Filter>
+    </ClCompile>
+    <ClCompile Include="tile.cpp">
+      <Filter>Source Files\game_test</Filter>
+    </ClCompile>
+    <ClCompile Include="world.cpp">
+      <Filter>Source Files\game_test</Filter>
+    </ClCompile>
+    <ClCompile Include="world_chunk.cpp">
+      <Filter>Source Files\game_test</Filter>
+    </ClCompile>
+    <ClCompile Include="world_generator.cpp">
+      <Filter>Source Files\game_test</Filter>
+    </ClCompile>
+    <ClCompile Include="ship.cpp">
+      <Filter>Source Files\physics_test</Filter>
+    </ClCompile>
+    <ClCompile Include="asteroid.cpp">
+      <Filter>Source Files\physics_test</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="game_state.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="player.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="physics_test_state.h">
+      <Filter>Header Files\physics_test</Filter>
     </ClInclude>
     <ClInclude Include="blur.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="projectile.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="world.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="world_chunk.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="tile.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="world_generator.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\game_test</Filter>
     </ClInclude>
     <ClInclude Include="camera.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\game_test</Filter>
+    </ClInclude>
+    <ClInclude Include="game_state.h">
+      <Filter>Header Files\game_test</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>Header Files\game_test</Filter>
+    </ClInclude>
+    <ClInclude Include="projectile.h">
+      <Filter>Header Files\game_test</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files\game_test</Filter>
+    </ClInclude>
+    <ClInclude Include="tile.h">
+      <Filter>Header Files\game_test</Filter>
+    </ClInclude>
+    <ClInclude Include="world.h">
+      <Filter>Header Files\game_test</Filter>
+    </ClInclude>
+    <ClInclude Include="world_chunk.h">
+      <Filter>Header Files\game_test</Filter>
+    </ClInclude>
+    <ClInclude Include="world_generator.h">
+      <Filter>Header Files\game_test</Filter>
+    </ClInclude>
+    <ClInclude Include="ship.h">
+      <Filter>Header Files\physics_test</Filter>
+    </ClInclude>
+    <ClInclude Include="asteroid.h">
+      <Filter>Header Files\physics_test</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -2,10 +2,11 @@
 
 #include <Embers.Lib/dll.h>
 #include "component.h"
+#include <3rdParty/box2d/include/box2d/box2d.h>
 
 namespace CORE {
 
-	class Effector;
+	class Effector;	
 
 	class EMB_API CRigidBody : public Component {
 
@@ -19,12 +20,15 @@ namespace CORE {
 		virtual void PostDraw(void);
 		virtual void DrawPass(GFX::ERenderPass pass);
 
+		virtual void ApplyForce(glm::vec2 force, glm::vec2 point);
+		virtual void ApplyForceAtCenter(glm::vec2 force);
+		virtual void ApplyTorque(float torque);
+
 		CRigidBody* AddEffector(Effector* effector);
 
-		glm::vec3 Velocity;
-		glm::vec3 Acceleration;
-
 	private:
+
+		b2Body* _body;
 
 		std::vector<Effector*> _effectors;
 

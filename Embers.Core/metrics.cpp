@@ -15,7 +15,6 @@ namespace CORE {
 		AddComponent<CGuiBorder>()
 			->SetDimensions(164, 128);
 
-
 		_panel = new SceneObject();
 		SceneObject* textFps = new SceneObject();
 		SceneObject* textTps = new SceneObject();

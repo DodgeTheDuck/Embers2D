@@ -11,12 +11,16 @@ namespace CORE {
 	}
 
 	void PhysicsWorld::Init(void) {
-		b2Vec2 gravity(0.0f, -10.0f);
+		b2Vec2 gravity(0.0f, 0.0f);
 		_world = new b2World(gravity);
 	}
 
-	void PhysicsWorld::Tick(void) {
+	b2Body * PhysicsWorld::CreateBody(b2BodyDef * bodyDef) {
+		return _world->CreateBody(bodyDef);
+	}
 
+	void PhysicsWorld::Tick(void) {
+		_world->Step(1.0f / 128.0f, 6, 2);
 	}
 
 	void PhysicsWorld::PostTick(void) {

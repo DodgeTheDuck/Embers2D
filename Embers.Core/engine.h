@@ -4,6 +4,7 @@
 #include "window_manager.h"
 #include "asset_bank.h"
 #include "scene.h"
+#include "physics_world.h"
 #include "input.h"
 #include "debug.h"
 #include "conductor.h"
@@ -53,6 +54,7 @@ namespace CORE {
 #define EMB_SCENE CORE::Scene::GetInstance()
 #define EMB_INPUT CORE::Input::GetInstance()
 #define EMB_DEBUG CORE::Debug::GetInstance()
+#define EMB_PHYSICS_WORLD CORE::PhysicsWorld::GetInstance()
 #define EMB_CONDUCTOR CORE::Conductor::GetInstance()
 
 #define EMB_INIT(state)																									\

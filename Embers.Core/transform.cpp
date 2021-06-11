@@ -8,7 +8,7 @@ namespace CORE {
 	CTransform::CTransform(SceneObject* owner) : Component(owner) {
 		Position = glm::vec3(0, 0, 0);
 		_scale = glm::vec3(1.0, 1.0, 1.0);
-		_angle = 0;
+		Angle = 0;
 	}
 
 	void CTransform::Translate(glm::vec3 translation) {
@@ -16,11 +16,11 @@ namespace CORE {
 	}
 
 	void CTransform::Rotate(float angle) {
-		_angle += angle;
+		Angle += angle;
 	}
 
 	void CTransform::SetAngle(float angle) {
-		_angle = angle;
+		Angle = angle;
 	}
 
 	void CTransform::SetScale(float x, float y, float z) {
@@ -34,7 +34,7 @@ namespace CORE {
 	}
 
 	void CTransform::PreDraw(void) {
-		EMB_GL->PushMatrix(glm::translate(glm::mat4(1.0), Position) * glm::rotate(glm::mat4(1.0) * glm::scale(glm::mat4(1.0), _scale), glm::radians(_angle), glm::vec3(0, 0, 1)));
+		EMB_GL->PushMatrix(glm::translate(glm::mat4(1.0), Position) * glm::rotate(glm::mat4(1.0) * glm::scale(glm::mat4(1.0), _scale), glm::radians(Angle), glm::vec3(0, 0, 1)));
 	}
 
 	void CTransform::Draw(void) {

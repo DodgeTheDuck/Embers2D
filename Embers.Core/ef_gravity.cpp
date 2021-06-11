@@ -12,7 +12,7 @@ namespace CORE {
 	}
 
 	void EFGravity::Apply(CRigidBody* body) {
-		body->Velocity += _dir * _force;
+		//body->Velocity += _dir * _force;
 	}
 
 }

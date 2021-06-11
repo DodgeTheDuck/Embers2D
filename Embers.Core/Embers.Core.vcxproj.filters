@@ -156,6 +156,9 @@
     <ClCompile Include="physics_world.cpp">
       <Filter>Source Files\physics</Filter>
     </ClCompile>
+    <ClCompile Include="polygon.cpp">
+      <Filter>Source Files\component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="state.h">
@@ -262,6 +265,9 @@
     </ClInclude>
     <ClInclude Include="physics_world.h">
       <Filter>Header Files\physics</Filter>
+    </ClInclude>
+    <ClInclude Include="polygon.h">
+      <Filter>Header Files\component</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,11 +1,36 @@
 
 #include "stdafx.h"
+
 #include "game_state.h"
+#include "physics_test_state.h"
+
+#include <Embers.Core/state.h>
 #include <Embers.Core/engine.h>
+
+enum class EAppToUse {
+	GAME_TEST = 0x0,
+	PHYSICS_TEST = 0x1
+};
+
+const EAppToUse APP_TO_USE = EAppToUse::PHYSICS_TEST;
 																						
 int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR cmd, _In_ int cmdShow) {		
 
-	GameState* state = new GameState();
+	CORE::State* state;
+
+	switch (APP_TO_USE) {
+		case EAppToUse::GAME_TEST: {
+			state = new GameState();
+			break;
+		}
+		case EAppToUse::PHYSICS_TEST: {
+			state = new PhysicsTestState();
+			break;
+		}
+		default: {
+			return 0;
+		}
+	}
 
 	EMB_WINDOW_MANAGER->SetApplicationHandle(hInstance);																	
 	CORE::Engine* eng = new CORE::Engine();																				

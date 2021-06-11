@@ -130,12 +130,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="asteroid.cpp" />
     <ClCompile Include="blur.cpp" />
     <ClCompile Include="camera.cpp" />
     <ClCompile Include="game_state.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="physics_test_state.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="projectile.cpp" />
+    <ClCompile Include="ship.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
     </ClCompile>
@@ -145,11 +148,14 @@
     <ClCompile Include="world_generator.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="asteroid.h" />
     <ClInclude Include="blur.h" />
     <ClInclude Include="camera.h" />
     <ClInclude Include="game_state.h" />
+    <ClInclude Include="physics_test_state.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="projectile.h" />
+    <ClInclude Include="ship.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="tile.h" />
     <ClInclude Include="world.h" />

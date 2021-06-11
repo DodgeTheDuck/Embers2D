@@ -12,8 +12,8 @@ namespace CORE {
 	}
 
 	void EFImpulse::Apply(CRigidBody* body) {
-		body->Acceleration += _dir * _force;
-		_life -= 1;
+		//body->Acceleration += _dir * _force;
+		//_life -= 1;
 	}
 
 }

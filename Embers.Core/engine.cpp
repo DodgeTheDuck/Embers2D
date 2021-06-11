@@ -46,6 +46,7 @@ namespace CORE {
 
 		EMB_GL->Init(EMB_WINDOW_MANAGER->GetApplicationHandle(), mainWindow->GetHandle());
 		EMB_SCENE->Init();
+		EMB_PHYSICS_WORLD->Init();
 		EMB_ASSET_BANK->Load();
 		EMB_DEBUG->Init();
 		EMB_CONDUCTOR->Init();
@@ -88,6 +89,7 @@ namespace CORE {
 
 	void Engine::Tick(void) {
 
+		EMB_PHYSICS_WORLD->Tick();
 		EMB_SCENE->Tick();
 
 		State* state = EMB_STATE_MANAGER->Top();

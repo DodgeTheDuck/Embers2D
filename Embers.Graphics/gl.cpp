@@ -121,7 +121,8 @@ namespace GFX {
 
 		glLineWidth(1.0f);
 
-		glClearColor(0.467f, 0.62f, 0.796f, 1);
+		//glClearColor(0.467f, 0.62f, 0.796f, 1);
+		glClearColor(0, 0, 0, 1);
 
 		_sceneShader = new ShaderProgram("shaders/scene.frag", "shaders/scene.vert");
 		_blurShader = new ShaderProgram("shaders/blur.frag", "shaders/blur.vert");
