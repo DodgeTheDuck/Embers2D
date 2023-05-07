@@ -1,5 +1,5 @@
-
 #include "stdafx.h"
+
 #include "gui_panel.h"
 #include "asset_bank.h"
 #include "engine.h"
@@ -25,14 +25,14 @@ namespace CORE {
 			_isDirty = false;
 		}
 
-		switch(pass) {
-		case GFX::ERenderPass::GUI:			
+		switch (pass) {
+		case GFX::ERenderPass::GUI:
 			_shader->Bind();
 			_vao->Bind();
 			EMB_GL->DrawElements(GFX::EDrawStyle::TRIANGLES, 6);
 			break;
-		case GFX::ERenderPass::BLUR_X: 
-			_vao->Bind();			
+		case GFX::ERenderPass::BLUR_X:
+			_vao->Bind();
 			EMB_GL->DrawElements(GFX::EDrawStyle::TRIANGLES, 6);
 			break;
 		case GFX::ERenderPass::BLUR_Y:
@@ -52,7 +52,7 @@ namespace CORE {
 		_vao->Bind();
 		_vbo = new GFX::VBO(GFX::Mesh::Rect(0, 0, _width, _height, GFX::EDrawStyle::TRIANGLES, { 0.0, 0.0, 0.0, 0.65 }));
 		_vao->Unbind();
-		
+
 	}
 
 }

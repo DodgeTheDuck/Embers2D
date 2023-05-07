@@ -4,6 +4,7 @@
 #include "material.h"
 #include "texture.h"
 #include "transform.h"
+#include "spritesheet.h";
 
 #include <Embers.Graphics/vbo.h>
 #include <Embers.Graphics/vao.h>
@@ -20,7 +21,7 @@ namespace CORE {
 		_sprWidth = 0;
 		_sprHeight = 0;
 
-		_material = NULL;
+		//_material = NULL;
 
 		_cellIndex = 0;
 		_frameTimer = 0;
@@ -69,8 +70,10 @@ namespace CORE {
 			_Rebuild();			
 		}		
 
-		_material->Bind();
-		_material->Update();
+		//_material->Bind();
+		//_material->Update();
+
+		_spriteSheet->Bind();
 		_vao->Bind();		
 		EMB_GL->DrawElements(GFX::EDrawStyle::TRIANGLES, 6);
 
@@ -84,13 +87,18 @@ namespace CORE {
 
 	}
 
-	CSprite * CSprite::SetMaterial(Material* mat) {
-		_material = mat;
-		return this;
-	}
+	//CSprite * CSprite::SetMaterial(Material* mat) {
+	//	_material = mat;
+	//	return this;
+	//}
 
-	Material* CSprite::GetMaterial(void) {
-		return _material;
+	//Material* CSprite::GetMaterial(void) {
+	//	return _material;
+	//}
+
+	CSprite* CSprite::SetSpritesheet(Spritesheet* sheet) {
+		_spriteSheet = sheet;
+		return this;
 	}
 
 	void CSprite::_Rebuild(void) {

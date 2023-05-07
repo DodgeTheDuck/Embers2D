@@ -24,7 +24,7 @@ namespace CORE {
 
 	void Window::Rebuild(void) {
 		Close();
-		_Create(_hInstance, 640, 480, "Embers 2D");
+		_Create(_hInstance, 1024, 768, "Embers 2D");
 	}
 
 	HWND Window::GetHandle(void) {
@@ -37,9 +37,17 @@ namespace CORE {
 
 	LRESULT Window::_WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) {
 
+		RECT r;
+
+		GetWindowRect(hWnd, &r);
+
+		int winW = r.right - r.left;
+		int winH = r.bottom - r.top;
+
 		switch (msg) {
 		case WM_MOUSEMOVE: 
 			EMB_INPUT->SetMousePosition(GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam));
+			SetCursorPos(r.left + winW / 2, r.top + winH / 2);
 			break;
 		case WM_KEYDOWN:
 			EMB_INPUT->SetKeyState((EKey)wParam, EKeyState::DOWN);
@@ -54,6 +62,7 @@ namespace CORE {
 			return DefWindowProc(hWnd, msg, wParam, lParam);
 
 		}
+
 
 		return 0;
 

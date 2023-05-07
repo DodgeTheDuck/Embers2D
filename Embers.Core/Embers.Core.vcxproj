@@ -29,26 +29,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
@@ -72,7 +72,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>$(SolutionDir);$(SolutionDir)\3rdParty;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Users\dunca\source\repos\Embers2D\3rdParty\box2d\lib\Debug;$(SolutionDir)$(Platform)\$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\Users\dunca\source\repos\Embers2D\3rdParty\box2d\lib\Debug;$(SolutionDir)$(Platform)\$(Configuration)\;C:\Users\dunca\source\repos\Embers2D\3rdParty\assimp;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -98,7 +98,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>Embers.System.lib;Embers.Graphics.lib;Embers.Def.lib;box2d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>Embers.System.lib;Embers.Graphics.lib;Embers.Def.lib;box2d.lib;assimp-vc143-mtd.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -146,12 +146,13 @@
     <ClCompile Include="gui_border.cpp" />
     <ClCompile Include="gui_component.cpp" />
     <ClCompile Include="gui_panel.cpp" />
-    <ClCompile Include="gui_panel.h" />
+    <ClInclude Include="gui_panel.h" />
     <ClCompile Include="gui_text_block.cpp" />
     <ClCompile Include="input.cpp" />
     <ClCompile Include="material.cpp" />
     <ClCompile Include="material_color_property.cpp" />
     <ClCompile Include="metrics.cpp" />
+    <ClCompile Include="model.cpp" />
     <ClCompile Include="physics_world.cpp" />
     <ClCompile Include="polygon.cpp" />
     <ClCompile Include="rigid_body.cpp" />
@@ -160,6 +161,7 @@
     <ClCompile Include="scene_object.cpp" />
     <ClCompile Include="shader.cpp" />
     <ClCompile Include="sprite.cpp" />
+    <ClCompile Include="spritesheet.cpp" />
     <ClCompile Include="state.cpp" />
     <ClCompile Include="state_manager.cpp" />
     <ClCompile Include="stb_image.cpp" />
@@ -193,6 +195,7 @@
     <ClInclude Include="material.h" />
     <ClInclude Include="material_color_property.h" />
     <ClInclude Include="metrics.h" />
+    <ClInclude Include="model.h" />
     <ClInclude Include="physics_world.h" />
     <ClInclude Include="polygon.h" />
     <ClInclude Include="rigid_body.h" />
@@ -201,6 +204,7 @@
     <ClInclude Include="scene_object.h" />
     <ClInclude Include="shader.h" />
     <ClInclude Include="sprite.h" />
+    <ClInclude Include="spritesheet.h" />
     <ClInclude Include="state.h" />
     <ClInclude Include="state_manager.h" />
     <ClInclude Include="stdafx.h" />

@@ -9,7 +9,6 @@
 
 #include "game_state.h"
 #include "player.h"
-#include "camera.h"
 #include "world.h"
 
 
@@ -19,12 +18,9 @@ GameState::GameState() : State() {
 
 void GameState::Init(void) {
 
-	//EMB_SCENE->Graph()->Root()->AddChild<Camera>(new Camera());
-	_world = EMB_SCENE->Graph()->Root()->AddChild<World>(new World(4, 2));
-	_player = EMB_SCENE->Graph()->Root()->AddChild<Player>(new Player(_world));
+	EMB_SCENE->Graph()->Root()->AddChild<Player>(new Player());
+	_world = EMB_SCENE->Graph()->Root()->AddChild<World>(new World(4, 4));
 
-
-	//EMB_SCENE->Graph()->Root()->AddChild<Blur>(new Blur());
 }
 
 void GameState::Tick(void) {

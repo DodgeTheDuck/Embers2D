@@ -28,23 +28,12 @@ WorldGenerator::WorldGenerator(uint32_t w, uint32_t h) {
 
 void WorldGenerator::Generate(void) {
 
-	float floorHeight = _height / 4;
-	float stoneHeight = _height / 2;
+	float floorHeight = _height;
+	float stoneHeight = _height/2;
 
 	for (int x = 0; x < _width; x++) {
 		for (int y = 0; y < _height; y++) {
-			if (y >= stoneHeight) {
-				_tiles[x][y] = ETileType::STONE;
-			}
-			else if (y == round(floorHeight)) {
-				_tiles[x][y] = ETileType::GRASS;
-			}
-			else if (y > floorHeight) {
-				_tiles[x][y] = ETileType::SOIL;
-			}
-			else {
-				_tiles[x][y] = ETileType::AIR;
-			}
+			_tiles[x][y] = ETileType::GRASS;			
 		}
 		floorHeight += (rand() % 200 - 50) / 100.0;
 		stoneHeight += (rand() % 200 - 100) / 100.0;

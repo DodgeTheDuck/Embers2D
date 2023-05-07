@@ -108,9 +108,6 @@
     <ClCompile Include="stb_image.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="gui_panel.h">
-      <Filter>Header Files\component</Filter>
-    </ClCompile>
     <ClCompile Include="gui_component.cpp">
       <Filter>Source Files\component</Filter>
     </ClCompile>
@@ -157,6 +154,12 @@
       <Filter>Source Files\physics</Filter>
     </ClCompile>
     <ClCompile Include="polygon.cpp">
+      <Filter>Source Files\component</Filter>
+    </ClCompile>
+    <ClCompile Include="spritesheet.cpp">
+      <Filter>Source Files\asset</Filter>
+    </ClCompile>
+    <ClCompile Include="model.cpp">
       <Filter>Source Files\component</Filter>
     </ClCompile>
   </ItemGroup>
@@ -267,6 +270,15 @@
       <Filter>Header Files\physics</Filter>
     </ClInclude>
     <ClInclude Include="polygon.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="gui_panel.h">
+      <Filter>Header Files\component</Filter>
+    </ClInclude>
+    <ClInclude Include="spritesheet.h">
+      <Filter>Header Files\asset</Filter>
+    </ClInclude>
+    <ClInclude Include="model.h">
       <Filter>Header Files\component</Filter>
     </ClInclude>
   </ItemGroup>

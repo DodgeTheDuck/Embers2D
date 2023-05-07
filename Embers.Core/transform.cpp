@@ -2,11 +2,13 @@
 #include "stdafx.h"
 #include "transform.h"
 #include <Embers.Graphics/gl.h>
+#include <glm/gtx/quaternion.hpp>
 
 namespace CORE {
 
 	CTransform::CTransform(SceneObject* owner) : Component(owner) {
 		Position = glm::vec3(0, 0, 0);
+		Rotation = glm::quat({ 0, 0, 0 });
 		_scale = glm::vec3(1.0, 1.0, 1.0);
 		Angle = 0;
 	}
@@ -17,6 +19,10 @@ namespace CORE {
 
 	void CTransform::Rotate(float angle) {
 		Angle += angle;
+	}
+
+	void CTransform::Rotate(glm::vec3 axis, float angle) {
+		Rotation = glm::rotate(Rotation, angle, axis);
 	}
 
 	void CTransform::SetAngle(float angle) {
@@ -34,7 +40,8 @@ namespace CORE {
 	}
 
 	void CTransform::PreDraw(void) {
-		EMB_GL->PushMatrix(glm::translate(glm::mat4(1.0), Position) * glm::rotate(glm::mat4(1.0) * glm::scale(glm::mat4(1.0), _scale), glm::radians(Angle), glm::vec3(0, 0, 1)));
+		//EMB_GL->PushMatrix(glm::translate(glm::mat4(1.0), Position) * glm::rotate(glm::mat4(1.0) * glm::scale(glm::mat4(1.0), _scale), glm::radians(Angle), glm::vec3(0, 0, 1)));
+		EMB_GL->PushMatrix(glm::translate(glm::mat4(1.0), Position) * glm::toMat4(Rotation));
 	}
 
 	void CTransform::Draw(void) {

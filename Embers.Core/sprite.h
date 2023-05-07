@@ -12,7 +12,8 @@ namespace GFX {
 
 namespace CORE {
 
-	class Material;	
+	class Material;
+	class Spritesheet;
 
 	class EMB_API CSprite : public Component {
 
@@ -27,24 +28,27 @@ namespace CORE {
 
 		virtual void DrawPass(GFX::ERenderPass pass);
 
-		CSprite * SetOrigin(float x, float y);
-		CSprite * SetCellSize(uint32_t w, uint32_t h);
-		CSprite * SetCellIndex(uint32_t index);
-		CSprite * SetMaterial(Material* mat);
+		CSprite* SetOrigin(float x, float y);
+		CSprite* SetCellSize(uint32_t w, uint32_t h);
+		CSprite* SetCellIndex(uint32_t index);
+		//CSprite* SetMaterial(Material* mat);
+		CSprite* SetSpritesheet(Spritesheet* sheet);
 
-		Material* GetMaterial(void);
+		//Material* GetMaterial(void);
 
 	private:
 
 		void _Rebuild(void);
 
-		GFX::VBO * _vbo;
-		GFX::VAO * _vao;		
+		Spritesheet* _spriteSheet;
+
+		GFX::VBO* _vbo;
+		GFX::VAO* _vao;
 		GFX::Mesh _mesh;
 
 		bool _dirty;
 
-		Material* _material;
+		//Material* _material;
 
 		uint32_t _sprWidth;
 		uint32_t _sprHeight;

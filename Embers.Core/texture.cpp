@@ -6,11 +6,11 @@
 
 namespace CORE {
 
-	Texture::Texture(std::string& path) {
+	Texture::Texture(std::string path) {
 
 		unsigned char * data = stbi_load(path.c_str(), &_width, &_height, &_nChannels, 0);
+		_glTex = new GFX::Texture(data, _width, _height, _nChannels);
 
-		_glTex = new GFX::Texture(data, _width, _height);
 	}
 
 	void Texture::Bind(void) {

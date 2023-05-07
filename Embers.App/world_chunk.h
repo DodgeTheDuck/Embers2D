@@ -1,16 +1,18 @@
 #pragma once
 
+#include <Embers.Graphics/mesh.h>;
+
 class Tile;
 
 namespace CORE {
 	class Texture;
+	class Spritesheet;
 }
 
 namespace GFX {
 	class FBO;
 	class VAO;
-	class VBO;
-	class Mesh;
+	class VBO;	
 }
 
 class WorldGenerator;
@@ -35,13 +37,10 @@ private:
 
 	GFX::FBO * _fbo;
 
-	GFX::VAO * _vao;
-	GFX::VBO * _vbo;
+	GFX::Mesh _chunkMesh;
+	GFX::Mesh _outlineMesh;
 
-	GFX::VBO* _vboBorder;
-	GFX::VAO* _vaoBorder;
-
-	CORE::Texture* _texture;
+	CORE::Spritesheet* _tileset;
 
 	Tile** _tiles;
 

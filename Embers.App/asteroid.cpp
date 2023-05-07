@@ -47,7 +47,7 @@ Asteroid::Asteroid() {
 
 	_body = AddComponent<CORE::CRigidBody>();
 
-	_body->ApplyTorque(100000);
+	//_body->ApplyTorque(100000);
 
 }
 

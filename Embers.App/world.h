@@ -19,7 +19,7 @@ public:
 	Tile& TileAt(uint32_t x, uint32_t y);
 
 	static const uint32_t TILE_SIZE = 32;
-	static const uint32_t CHUNK_SIZE = 32;
+	static const uint32_t CHUNK_SIZE = 8;
 
 private:
 

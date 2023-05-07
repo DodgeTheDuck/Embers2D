@@ -11,7 +11,7 @@ namespace CORE {
 	void Debug::Init(void) {
 		_console = new CORE::Console();
 		_metrics = new CORE::Metrics();
-		//EMB_SCENE->Graph()->Root()->AddChild(_console);
+		EMB_SCENE->Graph()->Root()->AddChild(_console);
 		EMB_SCENE->Graph()->Root()->AddChild(_metrics);
 	}
 

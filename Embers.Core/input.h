@@ -22,6 +22,8 @@ namespace CORE {
 	struct Mouse {
 		int x;
 		int y;
+		float dx;
+		float dy;
 	};
 
 	class EMB_API Input : public LIB::Singleton<Input> {
@@ -30,6 +32,7 @@ namespace CORE {
 		void Init(void);
 
 		void SetMousePosition(int x, int y);
+		void ResetMouseDelta(void);
 		Mouse GetMouseState(void);
 
 		void SetKeyState(EKey key, EKeyState state);

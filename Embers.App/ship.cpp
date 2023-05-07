@@ -40,15 +40,15 @@ void Ship::Tick(void) {
 		float x = cos(glm::radians(t->Angle)) * 400;
 		float y = sin(glm::radians(t->Angle)) * 400;
 
-		_body->ApplyForceAtCenter({x, y});
+		//_body->ApplyForceAtCenter({x, y});
 	}
 
 	if (EMB_INPUT->GetKeyState(CORE::EKey::D) == CORE::EKeyState::DOWN) {
-		_body->ApplyTorque(1000);
+		//_body->ApplyTorque(1000);
 	}
 
 	if (EMB_INPUT->GetKeyState(CORE::EKey::A) == CORE::EKeyState::DOWN) {
-		_body->ApplyTorque(-1000);
+		//_body->ApplyTorque(-1000);
 	}
 
 	Entity::Tick();

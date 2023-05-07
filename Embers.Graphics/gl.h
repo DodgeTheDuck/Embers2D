@@ -23,8 +23,10 @@ namespace GFX {
 	};
 
 	enum EDrawStyle {
+		LINES = 0x001,
 		TRIANGLES = 0x004,
-		LINES = 0x001
+		TRIANGLE_STRIP = 0x005,
+		TRIANGLE_FAN = 0x006
 	};
 
 	class EMB_API GL {
@@ -53,6 +55,9 @@ namespace GFX {
 		void SetShader(GFX::ShaderProgram* shader);
 		void BindTexture(uint32_t texture);
 
+		void SetPerspective(void);
+		void SetOrtho(void);
+
 		void SetProjection(glm::mat4 proj);
 		glm::mat4 GetProjection(void);
 
@@ -60,6 +65,9 @@ namespace GFX {
 		glm::mat4 GetView(void);
 
 		void ClearView(void);
+
+		void EnableDepth(void);
+		void DisableDepth(void);
 
 
 		ShaderProgram* GetSceneShader(void);

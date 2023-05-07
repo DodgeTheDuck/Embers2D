@@ -5,7 +5,7 @@ namespace GFX {
 	class EMB_API Texture {
 
 	public:
-		Texture(unsigned char * data, int width, int height);
+		Texture(unsigned char * data, int width, int height, int channels);
 
 		void Bind(void);
 		uint32_t GetHandle(void);

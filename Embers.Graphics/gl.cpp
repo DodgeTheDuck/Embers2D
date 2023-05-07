@@ -119,7 +119,11 @@ namespace GFX {
 		glEnable(GL_BLEND);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-		glLineWidth(1.0f);
+		glDisable(GL_CULL_FACE);
+
+		glEnable(GL_DEPTH_TEST);
+
+		//glLineWidth(1.0f);
 
 		//glClearColor(0.467f, 0.62f, 0.796f, 1);
 		glClearColor(0, 0, 0, 1);
@@ -127,7 +131,9 @@ namespace GFX {
 		_sceneShader = new ShaderProgram("shaders/scene.frag", "shaders/scene.vert");
 		_blurShader = new ShaderProgram("shaders/blur.frag", "shaders/blur.vert");
 
-		_proj = glm::ortho(0.0f, 1024.0f, 768.0f, 0.0f, -0.1f, 0.1f);
+		//_proj = glm::ortho(0.0f, 1024.0f, 768.0f, 0.0f, -0.1f, 0.1f);
+		_proj = glm::perspective(90.0f, 1024.0f / 768.0f, 0.01f, 1024.0f);
+
 		_view = glm::mat4(1.0);
 
 		_renderPasses[ERenderPass::SCENE] = new FBO(1024, 768);
@@ -149,6 +155,7 @@ namespace GFX {
 	
 	void GL::DrawElements(EDrawStyle style, uint32_t nElements) {	
 
+		
 		if (_shaderPrg) {		
 
 			_shaderPrg->Bind();
@@ -170,9 +177,17 @@ namespace GFX {
 				glActiveTexture(GL_TEXTURE0);
 			}
 
-		}		
+		}				
 
 		glDrawElements(style, nElements, GL_UNSIGNED_INT, 0);
+	}
+
+	void GL::SetPerspective(void) {
+		_proj = glm::perspective(90.0f, 1024.0f / 768.0f, 0.01f, 1024.0f);
+	}
+
+	void GL::SetOrtho(void) {
+		_proj = glm::ortho(0, 1024, 0, 768);
 	}
 
 	void GL::Viewport(uint32_t x, uint32_t y, uint32_t w, uint32_t h) {
@@ -199,13 +214,18 @@ namespace GFX {
 		if (type == ERenderPass::DISPLAY) {
 			_currentPass = NULL;
 			glBindFramebuffer(GL_FRAMEBUFFER, 0);
-			glClear(GL_COLOR_BUFFER_BIT);
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 			
 		}
 		else {
+
+			if (type == ERenderPass::GUI) {
+				this->SetOrtho();
+			}
+
 			_currentPass = _renderPasses[type];
 			_currentPass->Bind();
-			glClear(GL_COLOR_BUFFER_BIT);
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 			if (type == ERenderPass::BLUR_X || type == ERenderPass::BLUR_Y) {
 				SetShader(_blurShader);
@@ -243,7 +263,7 @@ namespace GFX {
 
 	void GL::SetView(glm::mat4 view) {
 		//TODO: MAKE THIS AND GETVIEW BETTER PLS
-		view = glm::translate(view, glm::vec3((1024 / 2), (768 / 2), 0));
+		//view = glm::translate(view, glm::vec3((1024 / 2), (768 / 2), 0));
 		_view = view;
 	}
 

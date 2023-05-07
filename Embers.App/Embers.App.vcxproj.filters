@@ -31,6 +31,18 @@
     <Filter Include="Header Files\game_test">
       <UniqueIdentifier>{2ba83d87-be45-400c-b426-a623935925b4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\poggle">
+      <UniqueIdentifier>{afcb4b05-5b4a-4084-abf1-9a20b155627d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\poggle">
+      <UniqueIdentifier>{8b3fd4a4-403f-41ec-bb6d-2b07dafcd1f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\threed">
+      <UniqueIdentifier>{7a2d553b-faae-4ae7-b315-7a7a291b9463}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\threed">
+      <UniqueIdentifier>{e5e2c4af-8ee1-4c74-8690-6d3fd8dd7213}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -39,19 +51,7 @@
     <ClCompile Include="physics_test_state.cpp">
       <Filter>Source Files\physics_test</Filter>
     </ClCompile>
-    <ClCompile Include="blur.cpp">
-      <Filter>Source Files\game_test</Filter>
-    </ClCompile>
-    <ClCompile Include="camera.cpp">
-      <Filter>Source Files\game_test</Filter>
-    </ClCompile>
     <ClCompile Include="game_state.cpp">
-      <Filter>Source Files\game_test</Filter>
-    </ClCompile>
-    <ClCompile Include="player.cpp">
-      <Filter>Source Files\game_test</Filter>
-    </ClCompile>
-    <ClCompile Include="projectile.cpp">
       <Filter>Source Files\game_test</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
@@ -75,24 +75,30 @@
     <ClCompile Include="asteroid.cpp">
       <Filter>Source Files\physics_test</Filter>
     </ClCompile>
+    <ClCompile Include="poggle_game_state.cpp">
+      <Filter>Source Files\poggle</Filter>
+    </ClCompile>
+    <ClCompile Include="peg.cpp">
+      <Filter>Source Files\poggle</Filter>
+    </ClCompile>
+    <ClCompile Include="player.cpp">
+      <Filter>Source Files\game_test</Filter>
+    </ClCompile>
+    <ClCompile Include="threed_state.cpp">
+      <Filter>Source Files\threed</Filter>
+    </ClCompile>
+    <ClCompile Include="test_mesh.cpp">
+      <Filter>Source Files\threed</Filter>
+    </ClCompile>
+    <ClCompile Include="camera.cpp">
+      <Filter>Source Files\threed</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="physics_test_state.h">
       <Filter>Header Files\physics_test</Filter>
     </ClInclude>
-    <ClInclude Include="blur.h">
-      <Filter>Header Files\game_test</Filter>
-    </ClInclude>
-    <ClInclude Include="camera.h">
-      <Filter>Header Files\game_test</Filter>
-    </ClInclude>
     <ClInclude Include="game_state.h">
-      <Filter>Header Files\game_test</Filter>
-    </ClInclude>
-    <ClInclude Include="player.h">
-      <Filter>Header Files\game_test</Filter>
-    </ClInclude>
-    <ClInclude Include="projectile.h">
       <Filter>Header Files\game_test</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h">
@@ -115,6 +121,24 @@
     </ClInclude>
     <ClInclude Include="asteroid.h">
       <Filter>Header Files\physics_test</Filter>
+    </ClInclude>
+    <ClInclude Include="poggle_game_state.h">
+      <Filter>Header Files\poggle</Filter>
+    </ClInclude>
+    <ClInclude Include="peg.h">
+      <Filter>Header Files\poggle</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>Header Files\game_test</Filter>
+    </ClInclude>
+    <ClInclude Include="threed_state.h">
+      <Filter>Header Files\threed</Filter>
+    </ClInclude>
+    <ClInclude Include="test_mesh.h">
+      <Filter>Header Files\threed</Filter>
+    </ClInclude>
+    <ClInclude Include="camera.h">
+      <Filter>Header Files\threed</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

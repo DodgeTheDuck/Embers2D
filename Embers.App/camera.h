@@ -13,7 +13,6 @@ public:
 	virtual void Tick(void);
 	virtual void DrawPass(GFX::ERenderPass pass);
 
-
 private:
 	float _zoom;
 	CORE::CRigidBody* _body;

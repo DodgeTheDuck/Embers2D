@@ -12,7 +12,7 @@ namespace CORE {
 	class EMB_API Texture : public Asset {
 
 	public:	
-		Texture(std::string& path);
+		Texture(std::string path);
 		void Bind(void);
 
 		int GetWidth(void);

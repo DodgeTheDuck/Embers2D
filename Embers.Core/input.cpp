@@ -12,9 +12,16 @@ namespace CORE {
 
 	}
 
-	void Input::SetMousePosition(int x, int y) {
+	void Input::SetMousePosition(int x, int y) {		
+		_mouseState.dx = x - 1024 / 2;
+		_mouseState.dy = y - 768 / 2;
 		_mouseState.x = x;
 		_mouseState.y = y;
+	}
+
+	void Input::ResetMouseDelta(void) {
+		_mouseState.dx = 0;
+		_mouseState.dy = 0;
 	}
 
 	Mouse Input::GetMouseState(void) {

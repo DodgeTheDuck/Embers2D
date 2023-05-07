@@ -1,7 +1,7 @@
 #pragma once
 
-#include <Embers.Lib/dll.h>
 #include <Embers.Graphics/gl.h>
+#include <Embers.Lib/dll.h>
 #include "gui_component.h"
 
 namespace GFX {

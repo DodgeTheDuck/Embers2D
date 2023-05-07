@@ -11,6 +11,7 @@ namespace CORE {
 		CTransform(SceneObject* owner);
 		void Translate(glm::vec3 translation);
 		void Rotate(float angle);
+		void Rotate(glm::vec3 axis, float angle);
 
 		void SetAngle(float angle);
 		void SetScale(float x, float y, float z);
@@ -23,6 +24,7 @@ namespace CORE {
 		virtual void DrawPass(GFX::ERenderPass pass);
 
 		glm::vec3	Position;
+		glm::quat	Rotation;
 		float		Angle;
 
 
